@@ -1741,8 +1741,10 @@ button:focus-visible {
   }
 
   .service-card {
-    min-width: 88vw;
+    width: min(calc(100vw - 40px), 520px);
+    min-width: 0;
     min-height: 0;
+    flex: 0 0 min(calc(100vw - 40px), 520px);
     grid-template-columns: 1fr;
   }
 
