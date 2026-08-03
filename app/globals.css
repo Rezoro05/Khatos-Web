@@ -1611,7 +1611,7 @@ button:focus-visible {
     gap: 10px;
   }
 
-  .desktop-navigation {
+  .site-header .desktop-navigation {
     display: none;
   }
 
@@ -1705,6 +1705,10 @@ button:focus-visible {
 
   .brand-name {
     display: none;
+  }
+
+  .site-header .brand {
+    min-height: 44px;
   }
 
   .button-small {
@@ -1983,6 +1987,11 @@ button:focus-visible {
     min-height: 44px;
     display: inline-flex;
     align-items: center;
+  }
+
+  .site-footer a {
+    min-width: 44px;
+    padding-inline: 5px;
   }
 
   .organizations {
