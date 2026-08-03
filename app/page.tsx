@@ -238,9 +238,12 @@ export default function Home() {
             Or email khato.goguadze@gmail.com
           </a>
           <p className="scope">
-            Executive function training is educational and skills-based. It
-            does not provide medical diagnosis, psychotherapy, or medical
-            treatment.
+            I offer structured executive function strategies that complement
+            clinical care and support daily functioning. This may include
+            attention exercises, planning everyday tasks, organization
+            systems, and goal-based activities. When appropriate, I
+            collaborate with family members and coordinate with licensed
+            clinicians to reinforce established therapy plans.
           </p>
         </div>
       </section>
