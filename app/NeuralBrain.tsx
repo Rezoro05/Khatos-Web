@@ -233,7 +233,7 @@ export default function NeuralBrain() {
       <div className="brain-image" aria-hidden="true" />
       <canvas className="brain-neurons" ref={canvasRef} aria-hidden="true" />
       <span className="brain-hint" aria-hidden="true">
-        Move to activate
+        Move or tap to explore
       </span>
     </div>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 import NeuralBrain from "./NeuralBrain";
 import ServicesCarousel from "./ServicesCarousel";
 import { projects } from "./projectData";
@@ -42,11 +43,13 @@ export default function Home() {
           </span>
         </a>
 
-        <nav aria-label="Primary navigation">
+        <nav className="desktop-navigation" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
         </nav>
+
+        <MobileMenu />
 
         <a className="button button-small" href={consultationEmail}>
           Free consultation <span aria-hidden="true">↗</span>
@@ -55,18 +58,28 @@ export default function Home() {
 
       <section className="hero" id="top" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">Educational neuroscience in practice</p>
+          <p className="eyebrow">Executive function support, grounded in neuroscience</p>
           <h1 id="hero-title">
-            “Where attention goes, neural firing flows, and neural connection
-            grows.”
+            Practical strategies for focus, memory, and everyday independence.
           </h1>
-          <p className="quote-author">— Daniel J. Siegel</p>
+          <p className="hero-intro">
+            Individualized support for children ages 5–12, people navigating
+            ADHD-related challenges, and adults age 65+.
+          </p>
           <a className="text-link" href="#services">
             Explore the work <span aria-hidden="true">↓</span>
           </a>
         </div>
         <NeuralBrain />
       </section>
+
+      <blockquote className="quote-band">
+        <p>
+          “Where attention goes, neural firing flows, and neural connection
+          grows.”
+        </p>
+        <cite>Daniel J. Siegel</cite>
+      </blockquote>
 
       <section className="about section" id="about">
         <div className="portrait-wrap">
@@ -214,6 +227,7 @@ export default function Home() {
           </p>
           <ul>
             <li>For parents of children ages 5–12</li>
+            <li>For people navigating ADHD-related challenges</li>
             <li>For adults age 65+ and their families</li>
             <li>Individual, family, or small-group formats</li>
           </ul>

@@ -1,4 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Khatuna Goguadze | Executive Function Trainer",
+  description:
+    "Learn about Khatuna Goguadze's background in educational neuroscience, inclusive learning, and practical executive-function support.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Khatuna Goguadze",
+    description:
+      "Educational neuroscience translated into practical, humane support for everyday learning, focus, and memory.",
+    url: "/about",
+  },
+};
 
 const consultationEmail =
   "mailto:khato.goguadze@gmail.com?subject=Free%2015-minute%20consultation&body=Hello%20Khatuna%2C%0A%0AI%20would%20like%20to%20schedule%20a%20free%2015-minute%20consultation.";

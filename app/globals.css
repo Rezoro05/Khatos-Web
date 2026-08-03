@@ -177,6 +177,75 @@ button:focus-visible {
   justify-self: end;
 }
 
+.mobile-menu,
+.mobile-services {
+  display: none;
+}
+
+.mobile-menu {
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-menu-button {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-content: center;
+  gap: 6px;
+  padding: 0;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.mobile-menu-button span {
+  width: 17px;
+  height: 1px;
+  display: block;
+  background: currentColor;
+  transition: transform 180ms ease;
+}
+
+.mobile-menu-button[aria-expanded="true"] span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.mobile-menu-button[aria-expanded="true"] span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.site-header .mobile-navigation {
+  width: min(280px, calc(100vw - 20px));
+  position: absolute;
+  top: calc(100% + 12px);
+  right: -6px;
+  display: block;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  background: rgba(250, 249, 246, 0.99);
+  box-shadow: 0 18px 50px rgba(20, 29, 30, 0.16);
+}
+
+.site-header .mobile-navigation a {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.site-header .mobile-navigation a:hover {
+  background: var(--paper);
+}
+
 .hero {
   min-height: 900px;
   position: relative;
@@ -212,10 +281,12 @@ button:focus-visible {
   text-wrap: balance;
 }
 
-.quote-author {
-  margin: 24px 0 62px;
+.hero-intro {
+  max-width: 440px;
+  margin: 26px 0 46px;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .text-link {
@@ -305,6 +376,34 @@ button:focus-visible {
 .cover-brain[data-engaged="true"] .brain-hint {
   opacity: 0;
   transform: translate(-50%, 5px);
+}
+
+.quote-band {
+  min-height: 220px;
+  margin: 0;
+  padding: 58px max(48px, calc((100vw - 1440px) / 2));
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 48px;
+  color: var(--white);
+  background: var(--green);
+}
+
+.quote-band p {
+  max-width: 980px;
+  margin: 0;
+  font-size: clamp(1.9rem, 3.5vw, 3.6rem);
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+.quote-band cite {
+  padding-bottom: 8px;
+  color: rgba(255, 253, 249, 0.64);
+  font-size: 0.75rem;
+  font-style: normal;
+  white-space: nowrap;
 }
 
 .about {
@@ -1508,11 +1607,16 @@ button:focus-visible {
 
 @media (max-width: 1100px) {
   .site-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
   }
 
-  .site-header nav {
+  .desktop-navigation {
     display: none;
+  }
+
+  .mobile-menu {
+    display: block;
   }
 
   .hero-copy {
@@ -1600,16 +1704,12 @@ button:focus-visible {
   }
 
   .brand-name {
-    font-size: 0.68rem;
-  }
-
-  .brand-name small {
     display: none;
   }
 
   .button-small {
     min-width: 0;
-    min-height: 40px;
+    min-height: 44px;
     gap: 10px;
     padding: 0 14px;
     font-size: 0.6rem;
@@ -1628,11 +1728,14 @@ button:focus-visible {
 
   .hero-copy h1 {
     margin-top: 20px;
-    font-size: clamp(2.5rem, 12vw, 4rem);
+    font-size: clamp(2.45rem, 11.5vw, 3.8rem);
   }
 
-  .quote-author {
-    margin: 18px 0 0;
+  .hero-intro {
+    max-width: 330px;
+    margin: 22px 0 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
   }
 
   .text-link {
@@ -1650,6 +1753,19 @@ button:focus-visible {
     left: 49%;
     bottom: 12%;
     font-size: 0.49rem;
+  }
+
+  .quote-band {
+    min-height: 280px;
+    padding: 54px 20px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 34px;
+  }
+
+  .quote-band p {
+    font-size: clamp(2rem, 9vw, 3rem);
   }
 
   .about {
@@ -1709,6 +1825,87 @@ button:focus-visible {
 
   .carousel-shell {
     margin-top: 50px;
+  }
+
+  .desktop-services {
+    display: none;
+  }
+
+  .mobile-services {
+    width: calc(100% - 40px);
+    margin: 46px auto 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .mobile-service {
+    overflow: hidden;
+    color: var(--ink);
+    border-radius: 22px;
+    background: var(--white);
+  }
+
+  .mobile-service summary {
+    min-height: 72px;
+    display: grid;
+    grid-template-columns: 36px 1fr 24px;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-service summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-service summary span {
+    color: var(--muted);
+    font-size: 0.6rem;
+  }
+
+  .mobile-service summary strong {
+    font-size: 0.78rem;
+  }
+
+  .mobile-service summary > i {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    display: block;
+  }
+
+  .mobile-service summary > i::before,
+  .mobile-service summary > i::after {
+    content: "";
+    width: 14px;
+    height: 1px;
+    position: absolute;
+    top: 8px;
+    left: 2px;
+    background: var(--ink);
+    transition: transform 180ms ease;
+  }
+
+  .mobile-service summary > i::after {
+    transform: rotate(90deg);
+  }
+
+  .mobile-service[open] summary > i::after {
+    transform: rotate(0);
+  }
+
+  .mobile-service-panel {
+    border-top: 1px solid var(--line);
+  }
+
+  .mobile-service-panel .service-art {
+    min-height: 280px;
+  }
+
+  .mobile-service-panel .service-content {
+    padding: 28px;
   }
 
   .carousel-controls {
@@ -1775,7 +1972,17 @@ button:focus-visible {
 
   .service-content > a {
     width: 100%;
+    min-height: 44px;
+    align-items: center;
     gap: 20px;
+  }
+
+  .about-more,
+  .email-link,
+  .site-footer a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .organizations {

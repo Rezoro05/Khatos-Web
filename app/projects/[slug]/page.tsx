@@ -1,9 +1,32 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "../../projectData";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) return {};
+
+  const path = `/projects/${project.slug}`;
+  return {
+    title: `${project.title} | Khatuna Goguadze`,
+    description: project.description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: path,
+    },
+  };
 }
 
 export default async function ProjectPage({

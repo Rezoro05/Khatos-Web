@@ -95,16 +95,16 @@ export default function ServicesCarousel({
   };
 
   return (
-    <div className="carousel-shell">
+    <>
+      <div className="carousel-shell desktop-services">
       <div className="service-navigation">
-        <div className="service-tabs" role="tablist" aria-label="Choose a service">
+        <div className="service-tabs" aria-label="Choose a service">
           {services.map((service, index) => (
             <button
               className={activeService === index ? "active" : ""}
               type="button"
-              role="tab"
-              aria-selected={activeService === index}
-              aria-controls={`service-${service.className}`}
+              aria-pressed={activeService === index}
+              aria-label={`View ${service.label} service`}
               onClick={() => selectService(index)}
               key={service.label}
             >
@@ -141,8 +141,6 @@ export default function ServicesCarousel({
         {services.map((service, index) => (
           <article
             className="service-card"
-            id={`service-${service.className}`}
-            role="tabpanel"
             aria-label={`${service.label} service`}
             ref={(element) => {
               cardRefs.current[index] = element;
@@ -171,6 +169,39 @@ export default function ServicesCarousel({
           </article>
         ))}
       </div>
-    </div>
+      </div>
+
+      <div className="mobile-services" aria-label="Services">
+        {services.map((service, index) => (
+          <details className="mobile-service" open={index === 0} key={service.label}>
+          <summary>
+            <span>{service.number}</span>
+            <strong>{service.label}</strong>
+            <i aria-hidden="true" />
+          </summary>
+          <div className="mobile-service-panel">
+            <div className={`service-art ${service.className}`} aria-hidden="true">
+              <span />
+              <i />
+              <b />
+              <em />
+            </div>
+            <div className="service-content">
+              <p className="service-label">{service.label}</p>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <div className="format">
+                <span>Format</span>
+                <p>{service.format}</p>
+              </div>
+              <a href={consultationEmail}>
+                Discuss this service <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+          </details>
+        ))}
+      </div>
+    </>
   );
 }
