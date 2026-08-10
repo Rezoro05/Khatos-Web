@@ -42,9 +42,6 @@ export default async function ProjectPage({
     <main className="project-page">
       <header className="project-header">
         <Link className="brand" href="/#top">
-          <span className="brand-mark" aria-hidden="true">
-            <i />
-          </span>
           <span className="brand-name">
             Khatuna Goguadze
             <small>Executive Function Trainer</small>

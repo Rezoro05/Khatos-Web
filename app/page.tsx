@@ -34,9 +34,6 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Khatuna Goguadze home">
-          <span className="brand-mark" aria-hidden="true">
-            <i />
-          </span>
           <span className="brand-name">
             Khatuna Goguadze
             <small>Executive Function Trainer</small>
@@ -111,9 +108,38 @@ export default function Home() {
           </Link>
 
           <div className="credential-panel">
-            <div>
+            <div className="degree-credential">
               <span>MSc</span>
-              <p>Educational Neuroscience</p>
+              <div className="degree-details">
+                <p>Educational Neuroscience</p>
+                <div className="credential-logos" aria-label="Degree institutions">
+                  <a
+                    href="https://www.ucl.ac.uk/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="University College London"
+                  >
+                    <img
+                      src="https://cdn.ucl.ac.uk/logos/ucl/ucl-logo--secondary.svg"
+                      alt="UCL — University College London"
+                    />
+                  </a>
+                  <a
+                    href="https://www.bbk.ac.uk/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Birkbeck, University of London"
+                  >
+                    <svg
+                      className="birkbeck-logo"
+                      viewBox="42 23 173 53"
+                      aria-hidden="true"
+                    >
+                      <use href="https://dist.bbk.ac.uk/assets/svg/symbols.00203a48cf.svg#birkbeck-logo" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
             <div>
               <span>8+</span>
@@ -189,7 +215,7 @@ export default function Home() {
         </div>
 
         <div className="project-list section">
-          {projects.map((project, index) => (
+          {projects.slice(0, 2).map((project, index) => (
             <Link
               className={`project-card project-visual-${index + 1}`}
               href={`/projects/${project.slug}`}
@@ -211,6 +237,11 @@ export default function Home() {
               </div>
             </Link>
           ))}
+        </div>
+        <div className="projects-more section">
+          <Link className="button button-large" href="/projects">
+            See all projects <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 
@@ -250,9 +281,6 @@ export default function Home() {
 
       <footer className="site-footer">
         <div>
-          <span className="brand-mark light" aria-hidden="true">
-            <i />
-          </span>
           <p>Khatuna Goguadze</p>
           <small>Executive Function Trainer</small>
         </div>

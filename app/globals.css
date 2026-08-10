@@ -121,25 +121,6 @@ button:focus-visible {
   text-decoration: none;
 }
 
-.brand-mark {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: var(--ink);
-}
-
-.brand-mark i {
-  width: 21px;
-  height: 10px;
-  display: block;
-  border-top: 2px solid var(--paper);
-  border-radius: 50%;
-  transform: rotate(-8deg);
-}
-
 .brand-name {
   display: flex;
   flex-direction: column;
@@ -451,6 +432,7 @@ button:focus-visible {
 .services-heading h2,
 .testimonial-heading h2,
 .projects-heading h2,
+.projects-heading h1,
 .before h2 {
   margin: 26px 0 36px;
   font-size: clamp(2.7rem, 4.7vw, 5.2rem);
@@ -519,6 +501,31 @@ button:focus-visible {
   line-height: 1.4;
 }
 
+.credential-logos {
+  margin-top: 17px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.credential-logos a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.credential-logos img {
+  width: auto;
+  height: 29px;
+  display: block;
+}
+
+.credential-logos .birkbeck-logo {
+  width: 96px;
+  height: auto;
+  display: block;
+}
+
 .services-section {
   padding-block: 125px 145px;
   overflow: hidden;
@@ -540,7 +547,8 @@ button:focus-visible {
 }
 
 .services-heading h2,
-.projects-heading h2 {
+.projects-heading h2,
+.projects-heading h1 {
   max-width: 900px;
   margin-bottom: 0;
 }
@@ -1079,6 +1087,20 @@ button:focus-visible {
   gap: 24px;
 }
 
+.projects-more {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-more .button {
+  color: var(--white);
+}
+
+.projects-index-section {
+  min-height: calc(100vh - 100px);
+}
+
 .project-card {
   min-height: 560px;
   display: flex;
@@ -1184,6 +1206,7 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
+.project-summary h2,
 .project-summary h3 {
   margin: 0 0 34px;
   font-size: clamp(1.7rem, 2.6vw, 3rem);
@@ -1254,14 +1277,6 @@ button:focus-visible {
   gap: 80px;
   color: var(--white);
   background: var(--ink);
-}
-
-.brand-mark.light {
-  background: var(--white);
-}
-
-.brand-mark.light i {
-  border-color: var(--ink);
 }
 
 .site-footer > div:first-child p {
@@ -1698,12 +1713,11 @@ button:focus-visible {
     border-radius: 18px;
   }
 
-  .brand-mark {
-    width: 34px;
-    height: 34px;
+  .brand-name {
+    display: flex;
   }
 
-  .brand-name {
+  .brand-name small {
     display: none;
   }
 
@@ -1787,6 +1801,7 @@ button:focus-visible {
   .services-heading h2,
   .testimonial-heading h2,
   .projects-heading h2,
+  .projects-heading h1,
   .before h2 {
     font-size: clamp(2.6rem, 13vw, 4.2rem);
   }
@@ -1815,6 +1830,23 @@ button:focus-visible {
 
   .credential-panel span {
     margin: 0;
+  }
+
+  .credential-panel .degree-credential {
+    align-items: start;
+  }
+
+  .credential-logos {
+    margin-top: 13px;
+    gap: 12px;
+  }
+
+  .credential-logos img {
+    height: 25px;
+  }
+
+  .credential-logos .birkbeck-logo {
+    width: 84px;
   }
 
   .services-section,
