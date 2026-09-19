@@ -21,8 +21,8 @@ function createPoints(width: number, height: number) {
   for (let index = 0; index < 54; index += 1) {
     const angle = seededRandom(index + 1) * Math.PI * 2;
     const radius = Math.sqrt(seededRandom(index + 91));
-    const x = width * (0.68 + Math.cos(angle) * radius * 0.25);
-    const y = height * (0.51 + Math.sin(angle) * radius * 0.3);
+    const x = width * (0.52 + Math.cos(angle) * radius * 0.28);
+    const y = height * (0.54 + Math.sin(angle) * radius * 0.3);
 
     if (x < width * 0.22 && y > height * 0.58) continue;
     if (x > width * 0.78 && y > height * 0.69) continue;
@@ -118,10 +118,10 @@ export default function NeuralBrain() {
       context.clearRect(0, 0, width, height);
       const focusX = pointer.active
         ? pointer.x
-        : width * 0.68;
+        : width * 0.52;
       const focusY = pointer.active
         ? pointer.y
-        : height * 0.51;
+        : height * 0.54;
       const reach = pointer.active ? Math.min(width, height) * 0.235 : 94;
 
       connections.forEach(([first, second]) => {

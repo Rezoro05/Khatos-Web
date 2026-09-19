@@ -244,10 +244,9 @@ button:focus-visible {
   pointer-events: none;
   background: linear-gradient(
     90deg,
-    rgba(244, 241, 236, 0.96) 0%,
-    rgba(244, 241, 236, 0.82) 29%,
-    rgba(244, 241, 236, 0.25) 57%,
-    rgba(244, 241, 236, 0) 76%
+    rgba(244, 241, 236, 0.3) 0%,
+    rgba(244, 241, 236, 0.08) 36%,
+    rgba(244, 241, 236, 0) 58%
   );
 }
 
@@ -311,10 +310,10 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-image: url("/images/glass-brain-hero.jpg");
-  background-position: right center;
+  background-position: left center;
   background-repeat: no-repeat;
   /* Keep the full brain inside the hero rather than cropping its left side. */
-  background-size: contain;
+  background-size: 92% auto;
   filter: none;
   transition:
     filter 450ms ease,
@@ -331,12 +330,12 @@ button:focus-visible {
   mix-blend-mode: multiply;
   opacity: 0.9;
   -webkit-mask-image: radial-gradient(
-    ellipse 27% 32% at 68% 51%,
+    ellipse 30% 32% at 52% 54%,
     #000 60%,
     transparent 100%
   );
   mask-image: radial-gradient(
-    ellipse 27% 32% at 68% 51%,
+    ellipse 30% 32% at 52% 54%,
     #000 60%,
     transparent 100%
   );
@@ -350,8 +349,8 @@ button:focus-visible {
 .brain-hint {
   position: absolute;
   z-index: 3;
-  left: 68%;
-  bottom: 12%;
+  left: 52%;
+  bottom: 14%;
   transform: translateX(-50%);
   padding: 9px 14px;
   border: 1px solid var(--line);
@@ -1727,21 +1726,12 @@ button:focus-visible {
   }
 
   .brain-image {
-    background-position: 62% center;
-    background-size: auto 100%;
+    background-position: 55% bottom;
+    background-size: 540px auto;
   }
 
   .brain-neurons {
-    -webkit-mask-image: radial-gradient(
-      ellipse 44% 24% at 62% 58%,
-      #000 54%,
-      transparent 100%
-    );
-    mask-image: radial-gradient(
-      ellipse 44% 24% at 62% 58%,
-      #000 54%,
-      transparent 100%
-    );
+    display: none;
   }
 
   .brain-hint {
