@@ -233,7 +233,22 @@ button:focus-visible {
   min-height: 900px;
   position: relative;
   overflow: hidden;
-  background: #f2efeb;
+  background: #e9e6e0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 241, 236, 0.96) 0%,
+    rgba(244, 241, 236, 0.82) 29%,
+    rgba(244, 241, 236, 0.25) 57%,
+    rgba(244, 241, 236, 0) 76%
+  );
 }
 
 .hero::after {
@@ -283,12 +298,11 @@ button:focus-visible {
 }
 
 .cover-brain {
-  width: min(82vw, 1260px);
-  height: 790px;
   position: absolute;
   z-index: 2;
-  right: -8vw;
-  bottom: -5px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   cursor: crosshair;
   isolation: isolate;
 }
@@ -297,10 +311,10 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-image: url("/images/glass-brain-hero.jpg");
-  background-position: center;
+  background-position: 68% center;
   background-repeat: no-repeat;
-  background-size: contain;
-  filter: drop-shadow(0 42px 48px rgba(83, 91, 91, 0.14));
+  background-size: cover;
+  filter: none;
   transition:
     filter 450ms ease,
     transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -316,29 +330,27 @@ button:focus-visible {
   mix-blend-mode: multiply;
   opacity: 0.9;
   -webkit-mask-image: radial-gradient(
-    ellipse 39% 31% at 51% 50%,
+    ellipse 27% 32% at 68% 51%,
     #000 60%,
     transparent 100%
   );
   mask-image: radial-gradient(
-    ellipse 39% 31% at 51% 50%,
+    ellipse 27% 32% at 68% 51%,
     #000 60%,
     transparent 100%
   );
 }
 
 .cover-brain[data-engaged="true"] .brain-image {
-  filter:
-    drop-shadow(0 45px 52px rgba(83, 91, 91, 0.15))
-    drop-shadow(0 0 22px rgba(242, 81, 59, 0.14));
-  transform: scale(1.015);
+  filter: saturate(1.03);
+  transform: scale(1.008);
 }
 
 .brain-hint {
   position: absolute;
   z-index: 3;
-  left: 51%;
-  bottom: 17%;
+  left: 68%;
+  bottom: 12%;
   transform: translateX(-50%);
   padding: 9px 14px;
   border: 1px solid var(--line);
@@ -1585,8 +1597,9 @@ button:focus-visible {
   }
 
   .cover-brain {
-    width: 94vw;
-    right: -21vw;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .services-heading,
@@ -1707,10 +1720,27 @@ button:focus-visible {
   }
 
   .cover-brain {
-    width: 136vw;
-    height: 520px;
-    right: -36vw;
-    bottom: 18px;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .brain-image {
+    background-position: 62% center;
+    background-size: auto 100%;
+  }
+
+  .brain-neurons {
+    -webkit-mask-image: radial-gradient(
+      ellipse 44% 24% at 62% 58%,
+      #000 54%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 44% 24% at 62% 58%,
+      #000 54%,
+      transparent 100%
+    );
   }
 
   .brain-hint {
