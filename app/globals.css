@@ -2,7 +2,7 @@
 
 :root {
   --ink: #12191a;
-  --muted: #687270;
+  --muted: #4f5b58;
   --paper: #f4f1ec;
   --white: #fffdf9;
   --line: rgba(18, 25, 26, 0.14);
@@ -31,6 +31,8 @@ body {
   color: var(--ink);
   background: var(--paper);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -57,7 +59,7 @@ button:focus-visible {
 .eyebrow {
   margin: 0;
   color: var(--muted);
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   line-height: 1.4;
@@ -73,7 +75,7 @@ button:focus-visible {
   border-radius: 999px;
   background: var(--signal);
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 700;
   transition:
     transform 180ms ease,
@@ -125,13 +127,13 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
 .brand-name small {
   color: var(--muted);
-  font-size: 0.53rem;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -146,7 +148,7 @@ button:focus-visible {
 .site-header nav a {
   color: #596260;
   text-decoration: none;
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
@@ -560,31 +562,23 @@ button:focus-visible {
   line-height: 1.65;
 }
 
-.carousel-shell {
-  width: 100%;
-  position: relative;
-  margin-top: 80px;
-}
-
-.service-navigation {
-  width: min(calc(100% - 96px), 1440px);
-  margin: 0 auto 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+.service-selector {
+  width: min(calc(100% - 96px), 1100px);
+  margin: 72px auto 0;
 }
 
 .service-tabs {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
 .service-tabs button {
-  min-width: 150px;
-  min-height: 48px;
-  padding: 0 18px;
+  min-width: 170px;
+  min-height: 52px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -595,7 +589,7 @@ button:focus-visible {
   background: transparent;
   cursor: pointer;
   font: inherit;
-  font-size: 0.69rem;
+  font-size: 0.875rem;
   font-weight: 700;
   transition:
     color 180ms ease,
@@ -604,7 +598,7 @@ button:focus-visible {
 }
 
 .service-tabs button span {
-  font-size: 0.55rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
@@ -619,67 +613,14 @@ button:focus-visible {
   background: var(--signal);
 }
 
-.carousel-controls {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-}
-
-.carousel-controls button {
-  width: 46px;
-  height: 46px;
-  color: var(--white);
-  border: 1px solid rgba(255, 253, 249, 0.28);
-  border-radius: 50%;
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
-  transition:
-    color 180ms ease,
-    background 180ms ease;
-}
-
-.carousel-controls button:hover {
-  color: var(--ink);
-  background: var(--white);
-}
-
-.carousel-controls button:disabled {
-  opacity: 0.26;
-  cursor: default;
-}
-
-.carousel-controls button:disabled:hover {
-  color: var(--white);
-  background: transparent;
-}
-
-.service-track {
-  display: flex;
-  gap: 22px;
-  padding: 0 max(48px, calc((100vw - 1440px) / 2)) 20px;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-padding-inline: max(48px, calc((100vw - 1440px) / 2));
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.service-track::-webkit-scrollbar {
-  display: none;
-}
-
 .service-card {
-  min-width: min(calc(100vw - 96px), 1100px);
-  min-height: 570px;
+  min-height: 600px;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  flex: 0 0 auto;
   overflow: hidden;
   color: var(--ink);
   border-radius: 34px;
   background: var(--white);
-  scroll-snap-align: center;
 }
 
 .service-art {
@@ -879,20 +820,20 @@ button:focus-visible {
 
 .service-content {
   min-width: 0;
-  padding: 44px;
+  padding: 52px;
 }
 
 .service-number {
   float: right;
   margin: 0;
   color: #9ca3a1;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
 }
 
 .service-label {
   margin: 0 0 42px;
   color: var(--signal);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -900,11 +841,11 @@ button:focus-visible {
 
 .service-content h3 {
   max-width: 100%;
-  margin: 0 0 24px;
-  font-size: clamp(2rem, 3vw, 3.4rem);
+  margin: 0 0 28px;
+  font-size: clamp(2rem, 3vw, 3.35rem);
   font-weight: 400;
   letter-spacing: -0.055em;
-  line-height: 1;
+  line-height: 1.08;
   overflow-wrap: anywhere;
   text-wrap: balance;
 }
@@ -912,6 +853,7 @@ button:focus-visible {
 .service-content > p:not(.service-number, .service-label) {
   max-width: 100%;
   color: var(--muted);
+  font-size: 1rem;
   line-height: 1.65;
   overflow-wrap: anywhere;
 }
@@ -928,7 +870,7 @@ button:focus-visible {
 
 .format span {
   color: var(--muted);
-  font-size: 0.61rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -936,8 +878,8 @@ button:focus-visible {
 
 .format p {
   margin: 0;
-  font-size: 0.78rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .service-content > a {
@@ -948,7 +890,9 @@ button:focus-visible {
   padding-bottom: 6px;
   border-bottom: 1px solid var(--ink);
   text-decoration: none;
-  font-size: 0.7rem;
+  min-height: 44px;
+  align-items: center;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
@@ -993,7 +937,7 @@ button:focus-visible {
 .placeholder-note {
   margin: 0;
   color: var(--muted);
-  font-size: 0.69rem;
+  font-size: 0.875rem;
   line-height: 1.5;
 }
 
@@ -1200,7 +1144,7 @@ button:focus-visible {
 .project-summary > p {
   margin: 0 0 14px;
   color: var(--muted);
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1219,7 +1163,9 @@ button:focus-visible {
   justify-content: space-between;
   padding-top: 18px;
   border-top: 1px solid var(--line);
-  font-size: 0.69rem;
+  min-height: 44px;
+  align-items: center;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 
@@ -1251,21 +1197,21 @@ button:focus-visible {
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .email-link {
   display: block;
   margin-top: 22px;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.875rem;
 }
 
 .scope {
   margin-top: 46px !important;
-  color: #7b8381;
-  font-size: 0.66rem !important;
-  line-height: 1.55 !important;
+  color: var(--muted);
+  font-size: 0.875rem !important;
+  line-height: 1.65 !important;
 }
 
 .site-footer {
@@ -1297,7 +1243,7 @@ button:focus-visible {
 .site-footer a {
   color: rgba(255, 253, 249, 0.74);
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: 0.875rem;
 }
 
 .site-footer > p {
@@ -1307,7 +1253,7 @@ button:focus-visible {
   padding-top: 26px;
   border-top: 1px solid rgba(255, 253, 249, 0.14);
   color: rgba(255, 253, 249, 0.38);
-  font-size: 0.62rem;
+  font-size: 0.75rem;
 }
 
 .project-page {
@@ -1325,7 +1271,7 @@ button:focus-visible {
 }
 
 .back-link {
-  font-size: 0.72rem;
+  font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
 }
@@ -1448,7 +1394,7 @@ button:focus-visible {
 
 .project-article-copy dt {
   color: var(--muted);
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1456,7 +1402,7 @@ button:focus-visible {
 
 .project-article-copy dd {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 1rem;
 }
 
 .project-article-copy section {
@@ -1521,7 +1467,7 @@ button:focus-visible {
 
 .story-number {
   color: var(--signal);
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
@@ -1578,7 +1524,7 @@ button:focus-visible {
 
 .about-values article span {
   color: var(--signal);
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
@@ -1730,7 +1676,7 @@ button:focus-visible {
     min-height: 44px;
     gap: 10px;
     padding: 0 14px;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
   }
 
   .hero {
@@ -1752,7 +1698,7 @@ button:focus-visible {
   .hero-intro {
     max-width: 330px;
     margin: 22px 0 0;
-    font-size: 0.92rem;
+    font-size: 1rem;
     line-height: 1.55;
   }
 
@@ -1770,7 +1716,7 @@ button:focus-visible {
   .brain-hint {
     left: 49%;
     bottom: 12%;
-    font-size: 0.49rem;
+    display: none;
   }
 
   .quote-band {
@@ -1859,19 +1805,28 @@ button:focus-visible {
     gap: 30px;
   }
 
-  .carousel-shell {
-    margin-top: 50px;
+  .service-selector {
+    width: calc(100% - 40px);
+    margin-top: 46px;
   }
 
-  .desktop-services {
+  .service-tabs {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 18px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .service-tabs::-webkit-scrollbar {
     display: none;
   }
 
-  .mobile-services {
-    width: calc(100% - 40px);
-    margin: 46px auto 0;
-    display: grid;
-    gap: 12px;
+  .service-tabs button {
+    min-width: 132px;
+    min-height: 48px;
+    flex: 0 0 auto;
+    font-size: 0.8125rem;
   }
 
   .mobile-service {
@@ -1944,40 +1899,10 @@ button:focus-visible {
     padding: 28px;
   }
 
-  .carousel-controls {
-    display: none;
-  }
-
-  .service-navigation {
-    width: 100%;
-    margin-bottom: 22px;
-    padding-left: 20px;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .service-navigation::-webkit-scrollbar {
-    display: none;
-  }
-
-  .service-tabs {
-    padding-right: 20px;
-  }
-
-  .service-tabs button {
-    min-width: 132px;
-  }
-
-  .service-track {
-    gap: 14px;
-    padding-inline: 20px;
-  }
-
   .service-card {
-    width: min(calc(100vw - 40px), 520px);
+    width: 100%;
     min-width: 0;
     min-height: 0;
-    flex: 0 0 min(calc(100vw - 40px), 520px);
     grid-template-columns: 1fr;
   }
 
@@ -1986,7 +1911,7 @@ button:focus-visible {
   }
 
   .service-content {
-    padding: 28px;
+    padding: 32px 28px;
   }
 
   .service-label {
@@ -1998,7 +1923,7 @@ button:focus-visible {
   }
 
   .service-content > p:not(.service-number, .service-label) {
-    font-size: 0.92rem;
+    font-size: 1rem;
   }
 
   .format {

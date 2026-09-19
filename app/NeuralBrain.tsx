@@ -209,8 +209,12 @@ export default function NeuralBrain() {
     );
     resizeObserver.observe(stage);
     visibilityObserver.observe(stage);
-    stage.addEventListener("pointermove", updatePointer);
-    stage.addEventListener("pointerleave", clearPointer);
+    // Keep the brain calm on touch-first devices: it remains visible, but the
+    // pointer-driven animation is reserved for precise desktop input.
+    if (!coarsePointer) {
+      stage.addEventListener("pointermove", updatePointer);
+      stage.addEventListener("pointerleave", clearPointer);
+    }
     resize();
     scheduleDraw();
 
@@ -218,8 +222,10 @@ export default function NeuralBrain() {
       cancelAnimationFrame(animationFrame);
       resizeObserver.disconnect();
       visibilityObserver.disconnect();
-      stage.removeEventListener("pointermove", updatePointer);
-      stage.removeEventListener("pointerleave", clearPointer);
+      if (!coarsePointer) {
+        stage.removeEventListener("pointermove", updatePointer);
+        stage.removeEventListener("pointerleave", clearPointer);
+      }
     };
   }, []);
 

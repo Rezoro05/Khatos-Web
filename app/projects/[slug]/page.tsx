@@ -74,6 +74,10 @@ export default async function ProjectPage({
               <dd>{project.audience}</dd>
             </div>
             <div>
+              <dt>Role</dt>
+              <dd>{project.role}</dd>
+            </div>
+            <div>
               <dt>Duration</dt>
               <dd>{project.duration}</dd>
             </div>
