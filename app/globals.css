@@ -311,9 +311,10 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background-image: url("/images/glass-brain-hero.jpg");
-  background-position: 68% center;
+  background-position: right center;
   background-repeat: no-repeat;
-  background-size: cover;
+  /* Keep the full brain inside the hero rather than cropping its left side. */
+  background-size: contain;
   filter: none;
   transition:
     filter 450ms ease,
@@ -343,7 +344,7 @@ button:focus-visible {
 
 .cover-brain[data-engaged="true"] .brain-image {
   filter: saturate(1.03);
-  transform: scale(1.008);
+  transform: none;
 }
 
 .brain-hint {
