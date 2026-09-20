@@ -45,6 +45,7 @@ export default function NeuralBrain() {
     const stage = stageRef.current;
     const canvas = canvasRef.current;
     if (!stage || !canvas) return;
+    const interactionTarget = stage.closest(".hero") ?? stage;
 
     const context = canvas.getContext("2d");
     if (!context) return;
@@ -212,8 +213,8 @@ export default function NeuralBrain() {
     // Keep the brain calm on touch-first devices: it remains visible, but the
     // pointer-driven animation is reserved for precise desktop input.
     if (!coarsePointer) {
-      stage.addEventListener("pointermove", updatePointer);
-      stage.addEventListener("pointerleave", clearPointer);
+      interactionTarget.addEventListener("pointermove", updatePointer);
+      interactionTarget.addEventListener("pointerleave", clearPointer);
     }
     resize();
     scheduleDraw();
@@ -223,8 +224,8 @@ export default function NeuralBrain() {
       resizeObserver.disconnect();
       visibilityObserver.disconnect();
       if (!coarsePointer) {
-        stage.removeEventListener("pointermove", updatePointer);
-        stage.removeEventListener("pointerleave", clearPointer);
+        interactionTarget.removeEventListener("pointermove", updatePointer);
+        interactionTarget.removeEventListener("pointerleave", clearPointer);
       }
     };
   }, []);
