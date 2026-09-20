@@ -313,7 +313,8 @@ button:focus-visible {
   background-position: left center;
   background-repeat: no-repeat;
   /* Keep the full brain inside the hero rather than cropping its left side. */
-  background-size: 92% auto;
+  /* Fill the complete hero with the image, avoiding a separate color field. */
+  background-size: cover;
   filter: none;
   transition:
     filter 450ms ease,
