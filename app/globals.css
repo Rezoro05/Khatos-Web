@@ -233,7 +233,7 @@ button:focus-visible {
   min-height: 900px;
   position: relative;
   overflow: hidden;
-  background: #e9e6e0;
+  background: #f0efed;
 }
 
 .hero::before {
@@ -313,8 +313,9 @@ button:focus-visible {
   background-position: left center;
   background-repeat: no-repeat;
   /* Keep the full brain inside the hero rather than cropping its left side. */
-  /* Fill the complete hero with the image, avoiding a separate color field. */
-  background-size: cover;
+  /* A full-width fit keeps the whole, slightly smaller brain visible. */
+  background-position: center;
+  background-size: 100% auto;
   filter: none;
   transition:
     filter 450ms ease,
@@ -331,12 +332,12 @@ button:focus-visible {
   mix-blend-mode: multiply;
   opacity: 0.9;
   -webkit-mask-image: radial-gradient(
-    ellipse 30% 32% at 52% 54%,
+    ellipse 34% 36% at 57% 55%,
     #000 60%,
     transparent 100%
   );
   mask-image: radial-gradient(
-    ellipse 30% 32% at 52% 54%,
+    ellipse 34% 36% at 57% 55%,
     #000 60%,
     transparent 100%
   );
@@ -350,7 +351,7 @@ button:focus-visible {
 .brain-hint {
   position: absolute;
   z-index: 3;
-  left: 52%;
+  left: 57%;
   bottom: 14%;
   transform: translateX(-50%);
   padding: 9px 14px;
